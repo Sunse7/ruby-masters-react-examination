@@ -1,42 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;400&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=Sansita&display=swap%27');
+
 #root {
-  max-width: 1280px;
+  width: 390px;
+  height: 844px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  background-color: #231F42;
+  font-family: 'Fira Sans', sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+#root h2 {
+  font-family: 'Sansita One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 37px;
+  color: #F56B9A;
 }
