@@ -1,12 +1,45 @@
-.eventContainer {
-    display: flex;
-    
+* {
+    margin: 0;
 }
 
-.date {}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 1.5rem;
+}
 
-.infoContainer {}
+.eventContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-direction: row;
+}
 
-.info {}
+.date {
+    display: flex;
+    justify-content: center;
+    border: 2px solid white;
+    width: 2.5rem;
+    height: auto;
+    padding: 2rem;
+}
 
-.price {}
+.infoContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15px;
+    border-bottom: 2px solid white;
+}
+
+.info { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.price {
+    align-self: flex-end;
+}
