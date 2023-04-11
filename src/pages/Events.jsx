@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import EventCard from "../Components/EventCard";
 import styles from './Events.module.css';
+import { useNavigate } from "react-router-dom";
 
 export const EventContext = createContext();
 
@@ -8,6 +9,7 @@ function Events() {
     const API_URL = 'https://majazocom.github.io/Data/events.json';
     
     const [upComingEvents, setUpComingEvents] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch(API_URL)
@@ -16,14 +18,13 @@ function Events() {
         .catch(err => console.log(err));
     }, []);
 
-
-    console.log(upComingEvents);
+    
 
     return ( 
         <EventContext.Provider value={[upComingEvents, setUpComingEvents]}>
             <h2>Events</h2>
             {
-                upComingEvents.map((upComingEvent, i) => <EventCard key={i} upComingEvent={upComingEvent} />)
+                upComingEvents.map((upComingEvent, i) => <EventCard key={i} upComingEvent={upComingEvent} action={() => navigate('/details')} />)
             }
         </EventContext.Provider>
      );
