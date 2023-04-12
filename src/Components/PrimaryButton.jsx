@@ -1,6 +1,8 @@
-function PrimaryButton() {
+import styles from "./PrimaryButton.module.css";
+
+function PrimaryButton({title, action}) {
     return ( 
-        <button>hej</button>
+        <button onClick={action}>{title}</button>
      );
 }
 

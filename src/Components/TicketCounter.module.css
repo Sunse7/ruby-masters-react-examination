@@ -1,0 +1,42 @@
+.ticketWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.ticketCounter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    border: 2px solid #F56B9A;
+    width: 14.3rem;
+    height: 8.1rem;
+    font-size: 28px;
+
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
+
+.total {
+    grid-column: 1/ span 4;
+    grid-row: 1/ span 2;
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.amount {
+    grid-column: 2/ span 2;
+    border-right: 2px solid #F56B9A;
+    border-left: 2px solid #F56B9A;
+    border-top: 2px solid #F56B9A;
+}
+
+.minus, 
+.plus{
+    border-top: 2px solid #F56B9A;
+    background-color: #231F42;
+    color: white;
+    padding: 0;
+    border-radius: 0;
+}

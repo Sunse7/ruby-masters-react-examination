@@ -18,8 +18,6 @@ function Events() {
         .catch(err => console.log(err));
     }, []);
 
-    
-
     return ( 
         <EventContext.Provider value={[upComingEvents, setUpComingEvents]}>
             <h2>Events</h2>
