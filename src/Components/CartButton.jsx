@@ -1,7 +1,7 @@
-function Cart({action}) {
+function CartButton({action}) {
     return ( 
         <button onClick={action}>Kassan</button>
      );
 }
 
-export default Cart;
+export default CartButton;
