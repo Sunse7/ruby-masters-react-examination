@@ -1,6 +1,8 @@
+import styles from "./BackCartButton.module.css";
+
 function CartButton({action}) {
     return ( 
-        <button onClick={action}>Kassan</button>
+        <button onClick={action} className={styles.cart}>Kassan</button>
      );
 }
 

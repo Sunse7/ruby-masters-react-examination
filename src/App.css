@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;400&display=swap%27');
-@import url('https://fonts.googleapis.com/css2?family=Sansita&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@500&family=Sansita:ital,wght@1,800&display=swap');
 
 #root {
   width: 390px;
@@ -12,9 +12,9 @@
 }
 
 #root h2 {
-  font-family: 'Sansita One';
+  font-family: 'Sansita', sans-serif;
   font-style: normal;
-  font-weight: bold;
+
   font-size: 38px;
   line-height: 37px;
   color: #F56B9A;

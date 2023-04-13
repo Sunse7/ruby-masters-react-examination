@@ -1,8 +1,9 @@
+import styles from "./BackCartButton.module.css";
 
 function BackButton({action}) {
 
     return ( 
-        <button onClick={action}>Tillbaka</button>
+        <button onClick={action} className={styles.back}>Tillbaka</button>
      );
 }
 

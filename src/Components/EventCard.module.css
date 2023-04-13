@@ -25,17 +25,19 @@
     border: 1px solid white;
     border-radius: 4px;
     width: 2.5rem;
-    height: 2rem;
-    padding: 2rem;
+    height: 1.5rem;
+    padding: 1.5rem 2rem 3rem;
     color: white;
+    margin: auto;
     text-align: center;
+    font-family: 'Fira Sans Condensed', sans-serif;
 }
 
 .infoContainer {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-left: 15px;
+    margin-left: 20px;
     border-bottom: .5px solid white;
 }
 
@@ -49,10 +51,12 @@
 .name {
     font-size: 22px;
     font-family: 'Fira Sans Condensed', sans-serif;
+    text-shadow: 1px 1px #F56B9A;
 }
 
 .where {
     font-size: small;
+    font-weight: light;
 }
 
 .price {
