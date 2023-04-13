@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@500&display=swap');
+
 * {
     margin: 0;
 }
@@ -7,6 +9,7 @@
     flex-direction: column;
     gap: 2rem;
     margin: 1.5rem;
+    color: white;
 }
 
 .eventContainer {
@@ -19,10 +22,13 @@
 .date {
     display: flex;
     justify-content: center;
-    border: 2px solid white;
+    border: 1px solid white;
+    border-radius: 4px;
     width: 2.5rem;
-    height: auto;
+    height: 2rem;
     padding: 2rem;
+    color: white;
+    text-align: center;
 }
 
 .infoContainer {
@@ -30,7 +36,7 @@
     display: flex;
     justify-content: space-between;
     margin-left: 15px;
-    border-bottom: 2px solid white;
+    border-bottom: .5px solid white;
 }
 
 .info { 
@@ -40,6 +46,19 @@
     text-align: left;
 }
 
+.name {
+    font-size: 22px;
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+.where {
+    font-size: small;
+}
+
 .price {
     align-self: flex-end;
+    color: #37AEAB;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: large;
 }
+

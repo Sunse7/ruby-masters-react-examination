@@ -2,7 +2,7 @@ import styles from "./PrimaryButton.module.css";
 
 function PrimaryButton({title, action}) {
     return ( 
-        <button onClick={action}>{title}</button>
+        <button onClick={action} className={styles.button}>{title}</button>
      );
 }
 

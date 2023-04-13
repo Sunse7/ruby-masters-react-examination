@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom";
 import styles from "./EventCard.module.css";
 
-function EventCard({ upComingEvent, action }) {
+function EventCard({ upComingEvent, cartList, action }) {
   const { when, name, where, price } = upComingEvent;
 
   return (
-    <NavLink to='/details' state={{upComingEvent: upComingEvent}}>
+    <NavLink to='/details' state={{upComingEvent: upComingEvent, cartList: cartList}}>
       <article className={styles.wrapper}>
         <article className={styles.eventContainer}>
           <section className={styles.date}>
@@ -13,9 +13,9 @@ function EventCard({ upComingEvent, action }) {
           </section>
           <section className={styles.infoContainer}>
             <section className={styles.info}>
-              <h3>{name}</h3>
-              <p>{where}</p>
-              <p>
+              <h3 className={styles.name}>{name}</h3>
+              <p className={styles.where} >{where}</p>
+              <p className={styles.time}>
                 {when.from} - {when.to}
               </p>
             </section>

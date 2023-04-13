@@ -4,16 +4,21 @@ import PrimaryButton from '../Components/PrimaryButton';
 import BackButton from "../Components/BackButton";
 import CartButton from "../Components/CartButton";
 import TicketCounter from "../Components/TicketCounter";
-import { createContext, useState } from "react";
+import { useContext, useState } from "react";
+import { EventContext } from "./Events";
 
-export const CartListContext = createContext();
+// export const CartListContext = createContext();
 
 function EventDetails() {
   const location = useLocation();
   const upComingEvent = location.state.upComingEvent;
+  // const cartList = location.state.cartList;
+  const [cartList, setCartList] = useContext(EventContext);
+
   const {name, when, where, price} = upComingEvent;
+
   const navigate = useNavigate();
-  const [cartList, setCartList] = useState([])
+  // const [cartList, setCartList] = useState(['hej'])
 
   const [totalSum, setTotalSum] = useState(price);
   const [ticketAmount, setTicketAmount] = useState(1);
@@ -27,16 +32,25 @@ function EventDetails() {
   }
 
   function addToCartList() {
-    setCartList([upComingEvent, ticketAmount, totalSum,...cartList])
+    let newCartListObj = {
+       name: name,
+       when: when,
+       where: where,
+       price: totalSum,
+       ticketAmount: ticketAmount
+    }
+    setCartList([newCartListObj, ...cartList]);
   }
 
+  // console.log(Array.isArray(cartList));
+
   return (
-    <CartListContext.Provider value={[cartList, setCartList]}>
+    // <CartListContext.Provider value={[cartList, setCartList]}>
       <section className={styles.eventDetails}>
         <header className={styles.header}>
           <BackButton action={() => navigate(-1)}/>
           <NavLink to='/order' state={{cartList: cartList}}>
-            <CartButton title='Kassa' />
+             <CartButton title='Kassa' />
           </NavLink>
         </header>
 
@@ -53,7 +67,7 @@ function EventDetails() {
         <TicketCounter action={() => calculate(price)} action2={() => (setTotalSum(totalSum+price), setTicketAmount(ticketAmount+1))} totalSum={totalSum} ticketAmount={ticketAmount}/>
         <PrimaryButton title='Lägg i varukorgen' action={addToCartList} />
       </section>
-    </CartListContext.Provider>
+    // </CartListContext.Provider>
   );
 }
 

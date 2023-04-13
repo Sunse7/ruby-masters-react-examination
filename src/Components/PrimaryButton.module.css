@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@500&display=swap');
+
+.button {
+    background-color: #37AEAB;
+    color: white;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 22px;
+    width: 80%;
+    align-self: center;
+    border-radius: 3px;
+}

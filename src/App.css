@@ -14,8 +14,10 @@
 #root h2 {
   font-family: 'Sansita One';
   font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
+  font-weight: bold;
+  font-size: 38px;
   line-height: 37px;
   color: #F56B9A;
+  margin-top: 1rem;
+  font-style: italic;
 }
