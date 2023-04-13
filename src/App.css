@@ -3,7 +3,7 @@
 
 #root {
   width: 390px;
-  height: 844px;
+  min-height: 675px;
   margin: 0 auto;
   text-align: center;
   background-color: #231F42;
@@ -14,10 +14,9 @@
 #root h2 {
   font-family: 'Sansita', sans-serif;
   font-style: normal;
-
   font-size: 38px;
   line-height: 37px;
   color: #F56B9A;
-  margin-top: 1rem;
+
   font-style: italic;
 }

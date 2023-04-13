@@ -13,11 +13,11 @@ function Splash() {
     })
 
     return ( 
-        <>
-            <img src="../src/assets/logo.png" alt="" />
-            <h2>Where it's @</h2> 
+        <section className={styles.splash}>
+            <img src="../src/assets/logo.png" alt="" className={styles.splashImg}/>
+            <h2 className={styles.splashH2}>Where it's @</h2> 
             <h3 className={styles.splashH3}>Ticketing made easy</h3>
-        </>
+        </section>
      );
 }
 

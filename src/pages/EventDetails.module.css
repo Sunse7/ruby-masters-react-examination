@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,500;1,300&family=Sansita:ital,wght@1,800&display=swap');
+
 .eventDetails {
     display: flex;
     flex-direction: column;
@@ -7,4 +9,25 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.scoreTickets {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-style: italic;
+    font-size: larger;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+.eventInfo {
+    color: #37AEAB;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: large;
+    padding: 5px;
+}
+
+.eventPlace {
+    font-size: medium;
+    font-weight: 400;
+    font-style: italic;
+    opacity: 70%;
 }

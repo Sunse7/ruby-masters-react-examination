@@ -1,6 +1,8 @@
+import styles from './Tickets.module.css';
+
 function Tickets() {
     return ( 
-        <><h2>Tickets</h2></>
+        <><h2 className={styles.ticketHeader}>Tickets</h2></>
      );
 }
 

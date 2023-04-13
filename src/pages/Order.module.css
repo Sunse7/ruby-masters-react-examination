@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,500;1,300&family=Sansita:ital,wght@1,800&display=swap');
+
+.orderSummary {
+    display: flex;
+    flex-direction: column;
+}
+
+.back {
+    align-self: flex-start;
+}
+
+
+.valueText {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-style: italic;
+    font-size: larger;
+}
+
+.totalSum {
+    font-weight: bolder;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: xx-large;
+    text-shadow: 1px 1px #F56B9A;
+}
+

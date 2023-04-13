@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;400&display=swap%27');
 
-.splashH3 {
-    font-family: 'Fira Sans', sans-serif;
+.splash {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    margin-top: 10rem;
+}
+
+.splashImg {
+    height: 130px;
+    width: 130px;
+}
+
+.splashH2 {
+    margin: 1rem;
 }

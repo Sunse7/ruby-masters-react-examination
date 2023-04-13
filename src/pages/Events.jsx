@@ -38,8 +38,8 @@ function Events() {
 
     return ( 
         <EventContext.Provider value={[upComingEvents, setUpComingEvents, cartList, setCartList]}>
-            <h2>Events</h2>
-            <input onChange={handleChange} value={searchInput} />
+            <h2 className={styles.eventText}>Events</h2>
+            <input onChange={handleChange} value={searchInput} className={styles.eventInput}/>
             {/* <SearchBar action={handleChange} value={searchInput} /> */}
             {
                 upComingEvents.map((upComingEvent, i) => <EventCard key={i} upComingEvent={upComingEvent} cartList={cartList} action={() => navigate('/details')} />)
