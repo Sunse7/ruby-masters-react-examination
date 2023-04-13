@@ -13,6 +13,8 @@ function Events() {
     const [upComingEvents, setUpComingEvents] = useState([]);
     const navigate = useNavigate();
 
+    const [searchInput, setSearchInput] = useState('');
+
     useEffect(() => {
         fetch(API_URL)
         .then(response => response.json())
@@ -20,12 +22,25 @@ function Events() {
         .catch(err => console.log(err));
     }, []);
 
-    console.log(cartList);
+    //console.log(cartList);
+
+    function handleChange(e) {
+        setSearchInput(e.target.value);
+
+        // Får upp i loggen efter 2:a bokstaven - fixa
+        if (searchInput.length > 0 ){
+            upComingEvents.filter((upComingEvent) => {
+                return console.log(upComingEvent.name.match(searchInput))
+                // return upComingEvent.name.match(searchInput);
+            });
+        }
+    };
 
     return ( 
         <EventContext.Provider value={[upComingEvents, setUpComingEvents, cartList, setCartList]}>
             <h2>Events</h2>
-            <SearchBar />
+            <input onChange={handleChange} value={searchInput} />
+            {/* <SearchBar action={handleChange} value={searchInput} /> */}
             {
                 upComingEvents.map((upComingEvent, i) => <EventCard key={i} upComingEvent={upComingEvent} cartList={cartList} action={() => navigate('/details')} />)
             }

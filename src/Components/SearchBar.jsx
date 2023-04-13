@@ -1,8 +1,8 @@
 import styles from './SearchBar.module.css';
 
-function SearchBar() {
+function SearchBar({action}) {
     return ( 
-        <input type="text" className={styles.eventInput}/>
+        <input onChange={(e) => action(e.target.value)} type="text" className={styles.eventInput}/>
      );
 }
 
