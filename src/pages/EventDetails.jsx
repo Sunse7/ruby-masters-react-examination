@@ -5,7 +5,7 @@ import BackButton from "../Components/BackButton";
 import CartButton from "../Components/CartButton";
 import TicketCounter from "../Components/TicketCounter";
 import { useContext, useState } from "react";
-import { EventContext } from "./Events";
+import { useEventContext } from "../context/events";
 
 // export const CartListContext = createContext();
 
@@ -13,7 +13,7 @@ function EventDetails() {
   const location = useLocation();
   const upComingEvent = location.state.upComingEvent;
   // const cartList = location.state.cartList;
-  const [cartList, setCartList] = useContext(EventContext);
+  const [cartList, setCartList] = useEventContext();
 
   const {name, when, where, price} = upComingEvent;
 
