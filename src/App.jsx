@@ -6,7 +6,9 @@ import Events from "./pages/Events";
 import EventDetails from "./pages/EventDetails";
 import Order from "./pages/Order";
 import Tickets from "./pages/Tickets";
-import { EventContext } from "./context/events";
+
+
+export const EventContext = createContext([]);
 
 function App() {
   const [cartList, setCartList] = useState([]);

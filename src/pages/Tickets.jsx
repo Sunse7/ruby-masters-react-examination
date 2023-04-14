@@ -1,8 +1,16 @@
+import { useContext } from 'react';
 import styles from './Tickets.module.css';
+import { EventContext } from '../App';
+import TicketCounter from '../Components/TicketCounter';
 
 function Tickets() {
+    const [cartList] = useContext(EventContext);
+
     return ( 
-        <><h2 className={styles.ticketHeader}>Tickets</h2></>
+        <section>
+            <h2 className={styles.ticketHeader}>{cartList.map((cartItem, i) => (<p key={i}>{cartItem.name}</p>))}</h2>
+            
+        </section>
      );
 }
 

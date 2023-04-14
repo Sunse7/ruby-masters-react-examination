@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@500&family=Sansita:ital,wght@1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;400&display=swap%27');
+
 .ticketWrapper {
     display: flex;
     justify-content: center;
@@ -13,20 +16,40 @@
     height: 8.1rem;
     font-size: 28px;
     margin-bottom: 2rem;
-    margin-top: 4rem;
 }
 
 .total {
     grid-column: 1/ span 4;
     grid-row: 1/ span 2;
-
     font-weight: bolder;
     font-family: 'Fira Sans Condensed', sans-serif;
     font-size: xx-large;
     text-shadow: 1px 1px #F56B9A;
-
     margin-top: auto;
     margin-bottom: auto;
+}
+
+.name {
+    grid-column: 1/ span 4;
+    grid-row: 1/ span 2;
+    font-family: 'Sansita', sans-serif;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 37px;
+    color: #F56B9A;
+    font-style: italic;
+    text-align: left;
+    margin: auto 6px;
+}
+
+.date {
+    grid-column: 1/ span 4;
+    grid-row: 2/ span 2;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 14px;
+    color: #37aeab;
+    text-align: left;
+    margin: auto 6px;
 }
 
 .amount {

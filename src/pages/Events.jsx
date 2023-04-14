@@ -1,16 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import EventCard from "../Components/EventCard";
 import styles from "./Events.module.css";
 import { useNavigate } from "react-router-dom";
 import SearchBar from "../Components/SearchBar";
-import { useEventContext } from "../context/events";
+import { EventContext } from "../App";
 
 function Events() {
   const API_URL = "https://majazocom.github.io/Data/events.json";
-  const [cartList, setCartList, upComingEvents, setUpComingEvents] =
-    useEventContext();
-
-    console.log(cartList);
+  const [cartList, setCartList, upComingEvents, setUpComingEvents] = useContext(EventContext);
 
   const navigate = useNavigate();
 

@@ -5,30 +5,26 @@ import BackButton from "../Components/BackButton";
 import CartButton from "../Components/CartButton";
 import TicketCounter from "../Components/TicketCounter";
 import { useContext, useState } from "react";
-import { useEventContext } from "../context/events";
-
-// export const CartListContext = createContext();
+import { EventContext } from "../App";
 
 function EventDetails() {
   const location = useLocation();
   const upComingEvent = location.state.upComingEvent;
-  // const cartList = location.state.cartList;
-  const [cartList, setCartList] = useEventContext();
+  const [cartList, setCartList] = useContext(EventContext);
 
   const {name, when, where, price} = upComingEvent;
 
   const navigate = useNavigate();
-  // const [cartList, setCartList] = useState(['hej'])
 
   const [totalSum, setTotalSum] = useState(price);
   const [ticketAmount, setTicketAmount] = useState(1);
    
   function calculate(price) {
-      if (totalSum === 0 && ticketAmount === 0){
-          return;
-      }
-      else {setTotalSum(totalSum-price)
-      setTicketAmount(ticketAmount-1)}
+    if (totalSum === 0 && ticketAmount === 0){
+        return;
+    }
+    else {setTotalSum(totalSum-price)
+    setTicketAmount(ticketAmount-1)}
   }
 
   function addToCartList() {
@@ -36,38 +32,36 @@ function EventDetails() {
        name: name,
        when: when,
        where: where,
-       price: totalSum,
-       ticketAmount: ticketAmount
+       price: price,
+       ticketAmount: ticketAmount,
+       totalSum: totalSum
     }
     setCartList([newCartListObj, ...cartList]);
   }
 
-  // console.log(Array.isArray(cartList));
-
   return (
-    // <CartListContext.Provider value={[cartList, setCartList]}>
-      <section className={styles.eventDetails}>
-        <header className={styles.header}>
-          <BackButton action={() => navigate(-1)}/>
-          <NavLink to='/order' state={{cartList: cartList}}>
-             <CartButton title='Kassa' />
-          </NavLink>
-        </header>
-
-        <h2 className={styles.eventTitle}>Event details</h2>
-        <h3 className={styles.scoreTickets}>You are about to score some tickets to:</h3>
-        {upComingEvent ? (
-          <>
-            <h2>{name}</h2>
-            <h4 className={styles.eventInfo}>{when.date} {when.from} - {when.to}</h4>
-            <p className={styles.eventPlace}>@ {where}</p>
-          </>
-        ) : <h2>Something went wrong...</h2>}
-
+    <section className={styles.eventDetails}>
+      <header className={styles.header}>
+        <BackButton action={() => navigate(-1)}/>
+        <NavLink to='/order' state={{ticketAmount, totalSum}}>
+            <CartButton title='Kassa' />
+        </NavLink>
+      </header>
+      
+      <h2 className={styles.eventTitle}>Event details</h2>
+      <h3 className={styles.scoreTickets}>You are about to score some tickets to:</h3>
+      {upComingEvent ? (
+        <>
+          <h2>{name}</h2>
+          <h4 className={styles.eventInfo}>{when.date} {when.from} - {when.to}</h4>
+          <p className={styles.eventPlace}>@ {where}</p>
+        </>
+      ) : <h2>Something went wrong...</h2>}
+      <section className={styles.ticketContainer}>
         <TicketCounter action={() => calculate(price)} action2={() => (setTotalSum(totalSum+price), setTicketAmount(ticketAmount+1))} totalSum={totalSum} ticketAmount={ticketAmount}/>
-        <PrimaryButton title='Lägg i varukorgen' action={addToCartList} />
       </section>
-    // </CartListContext.Provider>
+      <PrimaryButton title='Lägg i varukorgen' action={addToCartList} />
+    </section>
   );
 }
 
