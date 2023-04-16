@@ -3,10 +3,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;    
+    background-color: #F7F7F7;    
     width: 80%;
     color: black;
     text-align: left;
+    border-radius: 5px;
 }
 
 .title {
@@ -14,22 +15,34 @@
     font-size: 10px;
     font-family: 'Fira Sans Condensed', sans-serif;
     font-weight: bolder;
+    padding: 10px;
 }
 
 .artist {
-    height: 5rem;
+    height: 6rem;
     border-bottom: 1.5px dotted grey;
     width: 100%;
-    padding-left: 10px;
+    margin: auto;
     font-size: 24px;
     color: #F56B9A;
     font-family: 'Sansita', sans-serif;
 }
 
+.artistName {
+    padding-left: 10px;
+}
+
 .place {
     border-bottom: 1.5px dotted grey;
     width: 100%;
+    margin: auto;
+    height: 5rem;
+}
+
+.placetText {
     padding-left: 10px;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-weight: bolder;
 }
 
 .infoBox {
@@ -37,17 +50,19 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
-    padding-left: 10px;
+    height: 4rem;
 }
 
 .infoBoxFrom {
     border-left: 1.5px dotted grey;
     border-right: 1.5px dotted grey;
-    padding-left: 10px;
 }
 
-.infoBoxTo {
+.infoBoxText {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-weight: bolder;
     padding-left: 10px;
+    color: rgba(0, 0, 0, 0.67);
 }
 
 .infoBoxInfo {
@@ -56,18 +71,25 @@
     height: 4rem;
 }
 
+.infoBoxInfoText {
+    font-size: smaller;
+    font-size: 12px;
+    padding-left: 10px;
+}
+
 .ticketCodeBox {
-
-
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
 }
 
 .qrContainer {
     height: 110px;
     width: 110px;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .qrCode {
@@ -75,6 +97,12 @@
 }
 
 .code {
+    color: gray;
+    font-family: 'Fira Sans Condensed', sans-serif;
     font-weight: bolder;
     text-align: center;
+    padding: 10px;
+    letter-spacing: 0.3em;
+    font-size: 12px;
+    line-height: 14px;
 }

@@ -8,7 +8,7 @@ function Tickets() {
     const [cartList] = useContext(EventContext);
 
     return ( 
-        <section>
+        <section className={styles.ticketContainer}>
             <h2 className={styles.ticketHeader}>{cartList.map((cartItem, i) => (<p key={i}>{cartItem.name}</p>))}</h2>
             <TicketCard />
             
