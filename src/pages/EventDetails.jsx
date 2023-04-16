@@ -39,6 +39,16 @@ function EventDetails() {
     setCartList([newCartListObj, ...cartList]);
   }
 
+  function showMessage() {
+    return (
+      alert `Biljetterna ligger nu i kundkorgen!`
+      // <section className={styles.showMessageContainer}>
+      //   <h4>Biljetterna till {name} ligger nu i kundkorgen!</h4>
+      // </section>
+    )
+  }
+  // SKA VI HA MED DETTA?
+
   return (
     <section className={styles.eventDetails}>
       <header className={styles.header}>
@@ -62,7 +72,7 @@ function EventDetails() {
       <section className={styles.ticketContainer}>
         <TicketCounter action={() => calculate(price)} action2={() => (setTotalSum(totalSum+price), setTicketAmount(ticketAmount+1))} totalSum={totalSum} ticketAmount={ticketAmount}/>
       </section>
-      <PrimaryButton title='Lägg i varukorgen' action={addToCartList} />
+      <PrimaryButton title='Lägg i varukorgen' action={addToCartList} actionMessage={showMessage} />
     </section>
   );
 }

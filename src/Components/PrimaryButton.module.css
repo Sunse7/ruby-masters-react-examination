@@ -11,3 +11,12 @@
     margin-top: 3rem;
     margin-bottom: 2rem;
 }
+
+.button:hover {
+    opacity: .7;
+}
+
+.button:active {
+    color: black;
+    background-color: #F56B9A;
+}
