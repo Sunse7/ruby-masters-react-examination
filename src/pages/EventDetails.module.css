@@ -3,30 +3,33 @@
 .eventDetails {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-}
-
-.ticketContainer {
-    margin-top: 4rem;
+    gap: 8rem;
+    margin: 1rem 0 1rem 0;
 }
 
 .scoreTickets {
     font-family: 'Fira Sans Condensed', sans-serif;
     font-style: italic;
     font-size: larger;
-    margin-top: 1rem;
+    margin-top: 2rem;
     margin-bottom: 1.5rem;
+    width: 12rem;
 }
+
+.eventName{
+    margin: 1rem;
+}
+
 .eventInfo {
     color: #37AEAB;
     font-family: 'Fira Sans Condensed', sans-serif;
     font-size: large;
-    padding: 5px;
 }
 
 .eventPlace {
@@ -34,4 +37,8 @@
     font-weight: 400;
     font-style: italic;
     opacity: 70%;
+}
+
+.ticketContainer {
+    margin-top: 5rem;
 }

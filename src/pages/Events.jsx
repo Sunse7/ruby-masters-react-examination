@@ -32,6 +32,8 @@ function Events() {
     }
   }
 
+  // Vi använder inte searchbar-komponenten? Ta bort eller ändra här?
+
   return (
     <>
       <h2 className={styles.eventText}>Events</h2>
@@ -39,6 +41,7 @@ function Events() {
         onChange={handleChange}
         value={searchInput}
         className={styles.eventInput}
+        placeholder='Sök event'
       />
       {/* <SearchBar action={handleChange} value={searchInput} /> */}
       {upComingEvents && upComingEvents.map((upComingEvent, i) => (

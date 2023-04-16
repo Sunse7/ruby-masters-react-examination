@@ -41,7 +41,7 @@ function Order() {
             <header className={styles.back}>
                 <BackButton  action={() => navigate(-2)}/>
             </header>
-            <h2>Order</h2>
+            <h2 className={styles.headerText}>Order</h2>
             {cartList.map((cartItem, i) => <TicketCounter key={i} action={() => calculate(cartList.price)} action2={() => setFinalSum(finalSum + cartList.price)} name={cartItem.name} when={cartItem.when} ticketAmount={cartItem.ticketAmount} />)}
             <p className={styles.valueText}>Totalt värde på order</p>
             <h3 className={styles.totalSum}>{finalSum}</h3>

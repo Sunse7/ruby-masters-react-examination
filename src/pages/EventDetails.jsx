@@ -48,11 +48,13 @@ function EventDetails() {
         </NavLink>
       </header>
       
-      <h2 className={styles.eventTitle}>Event details</h2>
-      <h3 className={styles.scoreTickets}>You are about to score some tickets to:</h3>
+      <section className={styles.eventText}>
+        <h2 className={styles.eventTitle}>Event details</h2>
+        <h3 className={styles.scoreTickets}>You are about to score some tickets to:</h3>
+      </section>
       {upComingEvent ? (
         <>
-          <h2>{name}</h2>
+          <h2 className={styles.eventName}>{name}</h2>
           <h4 className={styles.eventInfo}>{when.date} {when.from} - {when.to}</h4>
           <p className={styles.eventPlace}>@ {where}</p>
         </>

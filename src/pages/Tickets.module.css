@@ -1,8 +1,10 @@
 .ticketContainer {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-image: linear-gradient(#f2699a, #682d85, #231f42);
 }
 
 .ticketHeader {

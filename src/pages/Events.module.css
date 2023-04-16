@@ -1,9 +1,13 @@
 .eventInput {
     width: 80%;
     height: 2.5rem;
-    margin: 1.5rem;
+    margin: 2rem;
+    margin-top: 3rem;
     background-color: #393555;
     border: none;
+    color: white;
+    text-indent: 10px;
+    border-radius: 4px;
 }
 
 .eventText {

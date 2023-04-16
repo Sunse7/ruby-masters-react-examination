@@ -3,13 +3,16 @@
 .orderSummary {
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 
 .back {
     align-self: flex-start;
+    margin: 1rem 0 1rem 0;
 }
 
+.headerText{
+    margin-bottom: 4rem;
+}
 
 .valueText {
     font-family: 'Fira Sans Condensed', sans-serif;
@@ -23,4 +26,3 @@
     font-size: xx-large;
     text-shadow: 1px 1px #F56B9A;
 }
-
