@@ -11,7 +11,9 @@
 
 .title {
     color: grey;
-    font-size: 15px;
+    font-size: 10px;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-weight: bolder;
 }
 
 .artist {
@@ -19,8 +21,9 @@
     border-bottom: 1.5px dotted grey;
     width: 100%;
     padding-left: 10px;
-    font-size: 26px;
+    font-size: 24px;
     color: #F56B9A;
+    font-family: 'Sansita', sans-serif;
 }
 
 .place {

@@ -13,21 +13,21 @@ function TicketCard() {
 
                 <section className={styles.place}>
                     <p className={styles.title}>WHERE</p>
-                    <h3>Vart</h3>
+                    <h4>Vart</h4>
                 </section>
 
                 <section  className={styles.infoBox}>
                     <section>
                         <p className={styles.title}>WHEN</p>
-                        <h3>Datum</h3>
+                        <h4>Datum</h4>
                     </section>
                     <section className={styles.infoBoxFrom}>
                         <p className={styles.title}>FROM</p>
-                        <h3>Start tid</h3>
+                        <h4>Start tid</h4>
                     </section>
                     <section className={styles.infoBoxTo}>
                         <p className={styles.title}>TO</p>
-                        <h3>Slut tid</h3>
+                        <h4>Slut tid</h4>
                     </section>
                 </section>
 
