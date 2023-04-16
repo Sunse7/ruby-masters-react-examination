@@ -35,7 +35,7 @@ function TicketCard() {
                 </section>
 
                 <section className={styles.ticketCodeBox}>
-                    <figure className={styles.qrContainer}>
+                    <figure>
                         <img src="../src/assets/qr-code.png" alt="" className={styles.qrCode}/>
                     </figure>
                     <p className={styles.code}>#A2ED7</p>
