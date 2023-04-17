@@ -44,12 +44,8 @@ function EventDetails() {
   function showMessage() {
     return (
       alert`Biljetterna ligger nu i kundkorgen!`
-      // <section className={styles.showMessageContainer}>
-      //   <h4>Biljetterna till {name} ligger nu i kundkorgen!</h4>
-      // </section>
     )
   }
-  // SKA VI HA MED DETTA?
 
   return (
     <section className={styles.eventDetails}>
@@ -73,7 +69,7 @@ function EventDetails() {
       ) : <h2>Something went wrong...</h2>}
       <section className={styles.ticketContainer}>
         <TicketCounter
-          subtactTickets={() => calculate(price)}
+          subtractTickets={() => calculate(price)}
           addTickets={() => (setTotalSum(totalSum + price), setTicketAmount(ticketAmount + 1))}
           totalSum={totalSum} ticketAmount={ticketAmount} />
       </section>

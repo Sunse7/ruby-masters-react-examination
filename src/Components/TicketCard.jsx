@@ -1,31 +1,32 @@
 import styles from './TicketCard.module.css';
 
-function TicketCard() {
+function TicketCard({cartItem}) {
+    const {name, when, where} = cartItem;
     return ( 
         <article className={styles.ticketContainer}>
 
                 <section className={styles.artist}>
                     <p className={styles.title}>WHAT</p>
-                    <h3 className={styles.artistName}>Namn</h3>
+                    <h3 className={styles.artistName}>{name}</h3>
                 </section>
 
                 <section className={styles.place}>
                     <p className={styles.title}>WHERE</p>
-                    <h4 className={styles.placetText}>Vart</h4>
+                    <h4 className={styles.placetText}>{where}</h4>
                 </section>
 
                 <section className={styles.infoBox}>
                     <section>
                         <p className={styles.title}>WHEN</p>
-                        <h4 className={styles.infoBoxText}>Datum</h4>
+                        <h4 className={styles.infoBoxText}>{when.date}</h4>
                     </section>
                     <section className={styles.infoBoxFrom}>
                         <p className={styles.title}>FROM</p>
-                        <h4 className={styles.infoBoxText}>Start tid</h4>
+                        <h4 className={styles.infoBoxText}>{when.from}</h4>
                     </section>
                     <section className={styles.infoBoxTo}>
                         <p className={styles.title}>TO</p>
-                        <h4 className={styles.infoBoxText}>Slut tid</h4>
+                        <h4 className={styles.infoBoxText}>{when.to}</h4>
                     </section>
                 </section>
 

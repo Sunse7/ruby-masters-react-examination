@@ -14,31 +14,34 @@ function Order() {
     const [finalSum, setFinalSum] = useState(0);
     const [finalTicketAmount, setFinalTicketAmount] = useState();
 
-    // console.log(cartList, 'order');
 
     useEffect(() => {
+        cartList.map(cartItem => {
+            let finalTotalTicketAmount = cartItem.ticketAmount;
+            // loop för att kunna jämföra varje objekt i listan för att se om namnet redan finns
+            for(let i = 0; i < cartList.length; i++){
+                console.log(cartItem.name)
+                if(cartItem.name === cartList[i].name){
+                    finalTotalTicketAmount += cartList[i].ticketAmount
+                    console.log(cartList[i]);
+                    return {...cartList, ticketAmount: finalTotalTicketAmount}
+                }
+
+            }
+        })
+
         calSum();
-        console.log(cartList);
+        // console.log(cartList[0].name);
         setFinalTicketAmount(cartList.ticketAmount)
     }, []);
 
     function calSum() {
         let sum = 0;
         cartList.forEach(item => {
-            console.log(item)
+            //console.log(item)
             sum += item.totalSum;
         });
         setFinalSum(sum);
-    }
-
-    function calculate(price) {
-        if (finalSum === 0 && cartList.ticketAmount === 0) {
-            return;
-        }
-        else {
-            setFinalSum(finalSum - price)
-            setFinalTicketAmount(cartList.ticketAmount - 1)
-        }
     }
 
     function handleAddItem(itemPrice, cartItem) {
@@ -49,19 +52,28 @@ function Order() {
         // i cL ska vi hitta på det cartitem vi vill uppdatera
         const newCartList = cartList.map(c => {
             if (c.name === cartItem.name) {
-                console.log(c);
+                //console.log(c);
                 return {...c, ticketAmount: c.ticketAmount + 1}
             }
             return c;
         });
         setCartList(newCartList);
     };
+
     function handleSubtractItem(itemPrice,cartItem) {
         let sum = finalSum - itemPrice;
         setFinalSum(sum);
         setFinalTicketAmount(finalTicketAmount - 1)
-    }
 
+        const newCartList = cartList.map(c => {
+            if (c.name === cartItem.name && c.ticketAmount > 0) {
+                //console.log(c);
+                return {...c, ticketAmount: c.ticketAmount - 1}
+            }
+            return c;
+        });
+        setCartList(newCartList);
+    }
 
     return (
         <section className={styles.orderSummary}>
@@ -72,7 +84,7 @@ function Order() {
             {cartList.map((cartItem, i) =>
                 <TicketCounter
                     key={i}
-                    subtactTickets={() => handleSubtractItem(cartItem.price, cartItem)}
+                    subtractTickets={() => handleSubtractItem(cartItem.price, cartItem)}
                     addTickets={() => handleAddItem(cartItem.price, cartItem)}
                     name={cartItem.name}
                     when={cartItem.when}

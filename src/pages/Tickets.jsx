@@ -9,8 +9,7 @@ function Tickets() {
 
     return ( 
         <section className={styles.ticketContainer}>
-            <h2 className={styles.ticketHeader}>{cartList.map((cartItem, i) => (<p key={i}>{cartItem.name}</p>))}</h2>
-            <TicketCard />
+            <h2 className={styles.ticketHeader}>{cartList.map((cartItem, i) => <TicketCard key={i} cartItem={cartItem}  />)}</h2>
             
         </section>
      );
