@@ -4,20 +4,19 @@
     justify-content: center;
     align-items: center;
     background-color: #F7F7F7;    
-    width: 100%;
-    color: black;
+    width: 20rem;
     text-align: left;
     border-radius: 5px;
     margin-bottom: 1rem;
-}
+    font-style: normal;
+    font-family: 'Fira Sans Condensed', sans-serif;}
 
 .title {
     color: grey;
     font-size: 10px;
-    font-family: 'Fira Sans Condensed', sans-serif;
-    font-weight: bolder;
-    /* padding-right: 10px; */
-}
+    font-weight: bold;
+    padding-left: 10px;
+    font-family: 'Fira Sans Condensed', sans-serif;}
 
 .artist {
     height: 6rem;
@@ -37,14 +36,15 @@
     border-bottom: 1.5px dotted grey;
     width: 100%;
     margin: auto;
-    height: 5rem;
+    height: 6rem;
     font-size: 24px;
 }
 
 .placetText {
     padding-left: 10px;
-    font-family: 'Fira Sans Condensed', sans-serif;
-    font-weight: bolder;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.802);
+    font-size: 22px;
 }
 
 .infoBox {
@@ -52,7 +52,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
-    height: 4rem;
+    height: 5rem;
 }
 
 .infoBoxFrom {
@@ -61,9 +61,8 @@
 }
 
 .infoBoxText {
-    font-family: 'Fira Sans Condensed', sans-serif;
-    font-weight: bolder;
-    font-size: 18px;
+    font-weight: bold;
+    font-size: 16px;
     padding-left: 10px;
     color: rgba(0, 0, 0, 0.67);
 }
@@ -71,13 +70,13 @@
 .infoBoxInfo {
     padding-left: 10px;
     width: 100%;
-    height: 4rem;
+    height: 5rem;
 }
 
 .infoBoxInfoText {
-    font-size: smaller;
-    font-size: 12px;
+    font-size: 13px;
     padding-left: 10px;
+    color: black;
 }
 
 .ticketCodeBox {
@@ -88,8 +87,8 @@
     align-items: center;
     justify-content: center;
     padding-top: 20px;
+    border-radius: 0 0 5px 5px;
 }
-
 
 .qrCode {
     height: 100px;
@@ -97,7 +96,6 @@
 
 .code {
     color: gray;
-    font-family: 'Fira Sans Condensed', sans-serif;
     font-weight: bolder;
     text-align: center;
     padding: 10px;
