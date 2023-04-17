@@ -1,6 +1,6 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import styles from './EventDetails.module.css'
-import PrimaryButton from '../Components/PrimaryButton';
+import styles from "./EventDetails.module.css";
+import PrimaryButton from "../Components/PrimaryButton";
 import BackButton from "../Components/BackButton";
 import CartButton from "../Components/CartButton";
 import TicketCounter from "../Components/TicketCounter";
@@ -22,66 +22,84 @@ function EventDetails() {
   function calculate(price) {
     if (totalSum === 0 && ticketAmount === 0) {
       return;
-    }
-    else {
-      setTotalSum(totalSum - price)
-      setTicketAmount(ticketAmount - 1)
+    } else {
+      setTotalSum(totalSum - price);
+      setTicketAmount(ticketAmount - 1);
     }
   }
 
   function addToCartList() {
+    let newCartList = [];
     let newCartListObj = {
       name: name,
       when: when,
       where: where,
       price: price,
       ticketAmount: ticketAmount,
-      totalSum: totalSum
+      totalSum: totalSum,
+    };
+    if (cartList.length > 0) {
+      console.log("här: ----- ", cartList);
+      newCartList = cartList.flatMap((cartItem) => {
+        if (cartItem.name === newCartListObj.name) {
+          newCartListObj.ticketAmount += cartItem.ticketAmount;
+          newCartListObj.totalSum += cartItem.totalSum;
+          return newCartListObj;
+        }
+        return [...cartList, newCartListObj];
+      });
+    } else {
+      newCartList = [...cartList, newCartListObj];
     }
-    const newCartList = cartList.map((cartItem) => {
-      if (cartItem.name === newCartListObj.name) {
-        cartItem.ticketAmount += newCartListObj.ticketAmount;
-        cartItem.totalSum += newCartListObj.totalSum;
-      }
-    })
-    console.log(newCartList)
-
+    console.log("efter tillägg: ----- ", newCartList);
     setCartList(newCartList);
   }
 
   function showMessage() {
-    return (
-      alert`Biljetterna ligger nu i kundkorgen!`
-    )
+    return alert`Biljetterna ligger nu i kundkorgen!`;
   }
 
   return (
     <section className={styles.eventDetails}>
       <header className={styles.header}>
         <BackButton action={() => navigate(-1)} />
-        <NavLink to='/order' state={{ ticketAmount, totalSum }}>
-          <CartButton title='Kassa' />
+        <NavLink to="/order" state={{ ticketAmount, totalSum }}>
+          <CartButton title="Kassa" />
         </NavLink>
       </header>
 
       <section className={styles.eventText}>
         <h2 className={styles.eventTitle}>Event details</h2>
-        <h3 className={styles.scoreTickets}>You are about to score some tickets to:</h3>
+        <h3 className={styles.scoreTickets}>
+          You are about to score some tickets to:
+        </h3>
       </section>
       {upComingEvent ? (
         <>
           <h2 className={styles.eventName}>{name}</h2>
-          <h4 className={styles.eventInfo}>{when.date} {when.from} - {when.to}</h4>
+          <h4 className={styles.eventInfo}>
+            {when.date} {when.from} - {when.to}
+          </h4>
           <p className={styles.eventPlace}>@ {where}</p>
         </>
-      ) : <h2>Something went wrong...</h2>}
+      ) : (
+        <h2>Something went wrong...</h2>
+      )}
       <section className={styles.ticketContainer}>
         <TicketCounter
           subtractTickets={() => calculate(price)}
-          addTickets={() => (setTotalSum(totalSum + price), setTicketAmount(ticketAmount + 1))}
-          totalSum={totalSum} ticketAmount={ticketAmount} />
+          addTickets={() => (
+            setTotalSum(totalSum + price), setTicketAmount(ticketAmount + 1)
+          )}
+          totalSum={totalSum}
+          ticketAmount={ticketAmount}
+        />
       </section>
-      <PrimaryButton title='Lägg i varukorgen' action={addToCartList} actionMessage={showMessage} />
+      <PrimaryButton
+        title="Lägg i varukorgen"
+        action={addToCartList}
+        actionMessage={showMessage}
+      />
     </section>
   );
 }

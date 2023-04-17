@@ -30,7 +30,7 @@ function Order() {
         // })
 
         calSum();
-        // console.log(cartList[0].name);
+         console.log('i order.jsx: ---- ',cartList);
         setFinalTicketAmount(cartList.ticketAmount)
     }, []);
 
