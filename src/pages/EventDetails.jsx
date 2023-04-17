@@ -29,7 +29,6 @@ function EventDetails() {
   }
 
   function addToCartList() {
-    let newCartList = [];
     let newCartListObj = {
       name: name,
       when: when,
@@ -38,25 +37,28 @@ function EventDetails() {
       ticketAmount: ticketAmount,
       totalSum: totalSum,
     };
-    if (cartList.length > 0) {
-      console.log("här: ----- ", cartList);
-      newCartList = cartList.flatMap((cartItem) => {
-        if (cartItem.name === newCartListObj.name) {
-          newCartListObj.ticketAmount += cartItem.ticketAmount;
-          newCartListObj.totalSum += cartItem.totalSum;
-          return newCartListObj;
-        }
-        return [...cartList, newCartListObj];
-      });
-    } else {
-      newCartList = [...cartList, newCartListObj];
-    }
-    console.log("efter tillägg: ----- ", newCartList);
-    setCartList(newCartList);
-  }
 
-  function showMessage() {
-    return alert`Biljetterna ligger nu i kundkorgen!`;
+    // kolla om den nya biljetten redan existerar i varukorgen
+    let itemAlreadyExists = false;
+    let itemAlreadyExistsIndex;
+    for (let i = 0; i < cartList.length; i++) {
+      if (cartList[i].name === newCartListObj.name) {
+        newCartListObj.ticketAmount = newCartListObj.ticketAmount + cartList[i].ticketAmount;
+        newCartListObj.totalSum = newCartListObj.totalSum + cartList[i].totalSum;
+        itemAlreadyExists = true;
+        itemAlreadyExistsIndex = i;
+      }
+    }
+    if (itemAlreadyExists) {
+      // ändra på befintligt objekt i cartList
+      const updatedCartList = [...cartList];
+      updatedCartList.splice(itemAlreadyExistsIndex, 1);
+      updatedCartList.push(newCartListObj);
+      setCartList(updatedCartList);
+    } else {
+      // pusha in nytt objekt
+      setCartList([...cartList, newCartListObj])
+    }
   }
 
   return (
@@ -98,7 +100,6 @@ function EventDetails() {
       <PrimaryButton
         title="Lägg i varukorgen"
         action={addToCartList}
-        actionMessage={showMessage}
       />
     </section>
   );
