@@ -36,6 +36,7 @@ function Order() {
 
         // i cL ska vi hitta på det cartitem vi vill uppdatera
         const newCartList = cartList.map(c => {
+            console.log('Order.jsx: ---- ', cartList);
             if (c.name === cartItem.name) {
                 return {...c, ticketAmount: c.ticketAmount + 1}
             }

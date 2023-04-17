@@ -1,8 +1,8 @@
 import styles from "./PrimaryButton.module.css";
 
-function PrimaryButton({title, action, actionMessage}) {
+function PrimaryButton({title, action}) {
     return ( 
-        <button onClick={() => {action(); actionMessage();}} className={styles.button}>{title}</button>
+        <button onClick={action} className={styles.button}>{title}</button>
      );
 }
 
