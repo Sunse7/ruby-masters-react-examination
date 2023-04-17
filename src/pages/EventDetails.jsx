@@ -38,7 +38,15 @@ function EventDetails() {
       ticketAmount: ticketAmount,
       totalSum: totalSum
     }
-    setCartList([newCartListObj, ...cartList]);
+    const newCartList = cartList.map((cartItem) => {
+      if (cartItem.name === newCartListObj.name) {
+        cartItem.ticketAmount += newCartListObj.ticketAmount;
+        cartItem.totalSum += newCartListObj.totalSum;
+      }
+    })
+    console.log(newCartList)
+
+    setCartList(newCartList);
   }
 
   function showMessage() {

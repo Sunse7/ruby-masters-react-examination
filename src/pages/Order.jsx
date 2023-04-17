@@ -16,19 +16,18 @@ function Order() {
 
 
     useEffect(() => {
-        cartList.map(cartItem => {
-            let finalTotalTicketAmount = cartItem.ticketAmount;
-            // loop för att kunna jämföra varje objekt i listan för att se om namnet redan finns
-            for(let i = 0; i < cartList.length; i++){
-                console.log(cartItem.name)
-                if(cartItem.name === cartList[i].name){
-                    finalTotalTicketAmount += cartList[i].ticketAmount
-                    console.log(cartList[i]);
-                    return {...cartList, ticketAmount: finalTotalTicketAmount}
-                }
-
-            }
-        })
+        // cartList.map(cartItem => {
+        //     let finalTotalTicketAmount = cartItem.ticketAmount;
+        //     // loop för att kunna jämföra varje objekt i listan för att se om namnet redan finns
+        //     for(let i = 0; i < cartList.length; i++){
+        //         console.log(cartItem.name)
+        //         if(cartItem.name === cartList[i].name){
+        //             finalTotalTicketAmount += cartList[i].ticketAmount
+        //             console.log(cartList[i]);
+        //             return {...cartList, ticketAmount: finalTotalTicketAmount}
+        //         }
+        //     }
+        // })
 
         calSum();
         // console.log(cartList[0].name);
@@ -61,8 +60,10 @@ function Order() {
     };
 
     function handleSubtractItem(itemPrice,cartItem) {
-        let sum = finalSum - itemPrice;
-        setFinalSum(sum);
+        if( finalSum > 0 ){
+            let sum = finalSum - itemPrice;
+            setFinalSum(sum);
+        }
         setFinalTicketAmount(finalTicketAmount - 1)
 
         const newCartList = cartList.map(c => {
