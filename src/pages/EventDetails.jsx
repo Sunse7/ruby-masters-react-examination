@@ -12,36 +12,38 @@ function EventDetails() {
   const upComingEvent = location.state.upComingEvent;
   const [cartList, setCartList] = useContext(EventContext);
 
-  const {name, when, where, price} = upComingEvent;
+  const { name, when, where, price } = upComingEvent;
 
   const navigate = useNavigate();
 
   const [totalSum, setTotalSum] = useState(price);
   const [ticketAmount, setTicketAmount] = useState(1);
-   
+
   function calculate(price) {
-    if (totalSum === 0 && ticketAmount === 0){
-        return;
+    if (totalSum === 0 && ticketAmount === 0) {
+      return;
     }
-    else {setTotalSum(totalSum-price)
-    setTicketAmount(ticketAmount-1)}
+    else {
+      setTotalSum(totalSum - price)
+      setTicketAmount(ticketAmount - 1)
+    }
   }
 
   function addToCartList() {
     let newCartListObj = {
-       name: name,
-       when: when,
-       where: where,
-       price: price,
-       ticketAmount: ticketAmount,
-       totalSum: totalSum
+      name: name,
+      when: when,
+      where: where,
+      price: price,
+      ticketAmount: ticketAmount,
+      totalSum: totalSum
     }
     setCartList([newCartListObj, ...cartList]);
   }
 
   function showMessage() {
     return (
-      alert `Biljetterna ligger nu i kundkorgen!`
+      alert`Biljetterna ligger nu i kundkorgen!`
       // <section className={styles.showMessageContainer}>
       //   <h4>Biljetterna till {name} ligger nu i kundkorgen!</h4>
       // </section>
@@ -52,12 +54,12 @@ function EventDetails() {
   return (
     <section className={styles.eventDetails}>
       <header className={styles.header}>
-        <BackButton action={() => navigate(-1)}/>
-        <NavLink to='/order' state={{ticketAmount, totalSum}}>
-            <CartButton title='Kassa' />
+        <BackButton action={() => navigate(-1)} />
+        <NavLink to='/order' state={{ ticketAmount, totalSum }}>
+          <CartButton title='Kassa' />
         </NavLink>
       </header>
-      
+
       <section className={styles.eventText}>
         <h2 className={styles.eventTitle}>Event details</h2>
         <h3 className={styles.scoreTickets}>You are about to score some tickets to:</h3>
@@ -70,7 +72,10 @@ function EventDetails() {
         </>
       ) : <h2>Something went wrong...</h2>}
       <section className={styles.ticketContainer}>
-        <TicketCounter action={() => calculate(price)} action2={() => (setTotalSum(totalSum+price), setTicketAmount(ticketAmount+1))} totalSum={totalSum} ticketAmount={ticketAmount}/>
+        <TicketCounter
+          subtactTickets={() => calculate(price)}
+          addTickets={() => (setTotalSum(totalSum + price), setTicketAmount(ticketAmount + 1))}
+          totalSum={totalSum} ticketAmount={ticketAmount} />
       </section>
       <PrimaryButton title='Lägg i varukorgen' action={addToCartList} actionMessage={showMessage} />
     </section>
