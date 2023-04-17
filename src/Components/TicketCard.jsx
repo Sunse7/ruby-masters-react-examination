@@ -1,13 +1,13 @@
 import styles from './TicketCard.module.css';
 
 function TicketCard({cartItem}) {
-    const {name, when, where} = cartItem;
+    const {name, when, where, ticketAmount} = cartItem;
     return ( 
         <article className={styles.ticketContainer}>
 
                 <section className={styles.artist}>
                     <p className={styles.title}>WHAT</p>
-                    <h3 className={styles.artistName}>{name}</h3>
+                    <h3 className={styles.artistName}>{ticketAmount}&nbsp; x &nbsp; {name}</h3>
                 </section>
 
                 <section className={styles.place}>
@@ -32,7 +32,7 @@ function TicketCard({cartItem}) {
 
                 <section className={styles.infoBoxInfo}>
                     <p className={styles.title}>INFO</p>
-                    <p className={styles.infoBoxInfoText}>Section C - seat 233, bring umbrella</p>
+                    <p className={styles.infoBoxInfoText}>Section C - seat 233, bring popcorn and a camera</p>
                 </section>
 
                 <section className={styles.ticketCodeBox}>

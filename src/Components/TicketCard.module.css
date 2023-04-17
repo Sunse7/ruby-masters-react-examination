@@ -9,13 +9,16 @@
     border-radius: 5px;
     margin-bottom: 1rem;
     font-style: normal;
-    font-family: 'Fira Sans Condensed', sans-serif;}
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+    
 
 .title {
     color: grey;
     font-size: 10px;
     font-weight: bold;
     padding-left: 10px;
+    padding-top: 10px;
     font-family: 'Fira Sans Condensed', sans-serif;}
 
 .artist {
@@ -29,6 +32,7 @@
 }
 
 .artistName {
+    padding-top: .5rem;
     padding-left: 10px;
 }
 
@@ -45,6 +49,7 @@
     font-weight: bold;
     color: rgba(0, 0, 0, 0.802);
     font-size: 22px;
+    padding-top: .5rem;
 }
 
 .infoBox {
@@ -52,7 +57,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
-    height: 5rem;
+    height: 4rem;
 }
 
 .infoBoxFrom {
@@ -65,6 +70,7 @@
     font-size: 16px;
     padding-left: 10px;
     color: rgba(0, 0, 0, 0.67);
+    padding-top: .5rem;
 }
 
 .infoBoxInfo {
@@ -77,6 +83,7 @@
     font-size: 13px;
     padding-left: 10px;
     color: black;
+    padding-top: .5rem;
 }
 
 .ticketCodeBox {

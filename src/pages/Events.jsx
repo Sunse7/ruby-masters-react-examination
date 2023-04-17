@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import EventCard from "../Components/EventCard";
 import styles from "./Events.module.css";
 import { useNavigate } from "react-router-dom";
-import SearchBar from "../Components/SearchBar";
 import { EventContext } from "../App";
 
 function Events() {
@@ -32,8 +31,6 @@ function Events() {
     }
   }
 
-  // Vi använder inte searchbar-komponenten? Ta bort eller ändra här?
-
   return (
     <>
       <h2 className={styles.eventText}>Events</h2>
@@ -43,7 +40,6 @@ function Events() {
         className={styles.eventInput}
         placeholder='Sök event'
       />
-      {/* <SearchBar action={handleChange} value={searchInput} /> */}
       {upComingEvents && upComingEvents.map((upComingEvent, i) => (
         <EventCard
           key={i}

@@ -16,19 +16,6 @@ function Order() {
 
 
     useEffect(() => {
-        // cartList.map(cartItem => {
-        //     let finalTotalTicketAmount = cartItem.ticketAmount;
-        //     // loop för att kunna jämföra varje objekt i listan för att se om namnet redan finns
-        //     for(let i = 0; i < cartList.length; i++){
-        //         console.log(cartItem.name)
-        //         if(cartItem.name === cartList[i].name){
-        //             finalTotalTicketAmount += cartList[i].ticketAmount
-        //             console.log(cartList[i]);
-        //             return {...cartList, ticketAmount: finalTotalTicketAmount}
-        //         }
-        //     }
-        // })
-
         calSum();
          console.log('i order.jsx: ---- ',cartList);
         setFinalTicketAmount(cartList.ticketAmount)
@@ -37,7 +24,6 @@ function Order() {
     function calSum() {
         let sum = 0;
         cartList.forEach(item => {
-            //console.log(item)
             sum += item.totalSum;
         });
         setFinalSum(sum);
@@ -51,7 +37,6 @@ function Order() {
         // i cL ska vi hitta på det cartitem vi vill uppdatera
         const newCartList = cartList.map(c => {
             if (c.name === cartItem.name) {
-                //console.log(c);
                 return {...c, ticketAmount: c.ticketAmount + 1}
             }
             return c;
@@ -68,7 +53,6 @@ function Order() {
 
         const newCartList = cartList.map(c => {
             if (c.name === cartItem.name && c.ticketAmount > 0) {
-                //console.log(c);
                 return {...c, ticketAmount: c.ticketAmount - 1}
             }
             return c;
@@ -92,9 +76,8 @@ function Order() {
                     ticketAmount={cartItem.ticketAmount} />)}
             <p className={styles.valueText}>Totalt värde på order</p>
             <h3 className={styles.totalSum}>{finalSum}</h3>
-            <h3 className={styles.totalSum}>Totala summan</h3>
-            <NavLink to='/tickets'>
-                <PrimaryButton title='Skicka order' />
+            <NavLink to='/tickets' >
+                <PrimaryButton title='Skicka order'/>
             </NavLink>
         </section>
     );
